@@ -18,12 +18,14 @@
 	git checkout loginsystem
 	git checkout -b loginsystem
 	
-	git config --global user.name "your name"
-	git config --global user.email "youremail@gmail.com"
+	git config --global user.name "Omkar Sutar"
+	git config --global user.email "omkarsutar@gmail.com"
+	git config user.name
+	git config user.email
 	
 	touch .gitignore
 	notepad .gitignore
-
+	
 	git rm filename.format
 	git mv filename renamename
 	git rm --cached filename
@@ -60,4 +62,4 @@
 	git merge loginsystem
 	git push origin --delete loginsystem
 	
-	git rm -rf .git
+	rm -rf .git
