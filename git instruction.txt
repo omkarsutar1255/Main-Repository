@@ -1,0 +1,99 @@
+git --version = to check version of git
+
+pwd = it shows current working directory
+ls = show list of file in pwd
+cd Foldername = change pwd
+
+git status = to check status of my files i.e. are they stage or commit
+
+git init = to set my folder as git repositary
+
+There are three  area i.e. working directory, staging area and git directory
+
+git config --global user.name "your name" = to save changes on your name
+git config --global user.email "youremail@gmail.com" = to save changes on your email
+NOTE : here --global is enable our name and email for all repositary of any folder
+
+git add . = this add all files in stage level   (we can add one by one files to stage as changes made and then and end we can commmit all files to git repositary)
+
+git commit -m "version 1" = this is make file commited
+git commit -- amend            # in this way we can merge new commit to old commitd so even we commit twice it show combined one commit
+git branch -v                 # this show last changes made in every branch
+git branch --merged             # show which branch merge already with other branch
+git branch --no-merged           # show which branch are not yet merged with other branchs
+
+NOTE : there are two people that are commiting to programme
+        1) omkar sutar - omkarsutar1255@gmail.com
+	2) omi sut - omkarsutar774@gmail.com
+
+git log  = to check who made changes on what timing
+git log -p    = this also show who made what changes
+git log --stat    # short summary of who made what changes in what files
+
+if make changes in programme and want add to git resporetary = put your email and name and add to stage and then commit on your email.
+
+https://github.com/omkarsutar1255/newforlearn.git
+ create a new repository on the command line 
+echo "# newforlearn" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin git@github.com:omkarsutar1255/newforlearn.git         # get SSH url for git bash and https for git gui and here we set ssh url as origin
+git remote -v                                                               # show all remote repositary
+git push -u origin master
+git push origin loginsystem:mybranch         # creates new branch on github and we can set new name to it by mention branch name after colon(:)
+git push -d origin mybranch                    # this delete branch from github directly
+
+push an existing repository from the command line
+git remote add origin git@github.com:omkarsutar1255/newforlearn.git          # add new repositary to git command line
+git branch -M master
+git push -u origin master                  # push code to github from computer
+
+git pull origin master                     # to pulll code from github to computer
+git pull                      # will pull code from not only master branch but also all branches
+
+git rm filename.format         # remove files from .git repositary
+git mv filename renamename      # to change file name
+git rm --cached filename         # to untracked file (not show changes that are made in that file)
+
+git commit -a -m "direct commit"    # this directly commit file without adding to staged level
+
+git add -A  = A stages all files i.e. new, modified and deleted files
+git add .   = . stages new and modified files
+git add -u  = -u stages modified and deleted files
+
+git status show some file to commit and if we want to see changes made in that file then use
+git diff filename.txt        # show us what changes are made in file
+git diff --staged filename.txt    # to check changes made at staged level for any file
+git diff --stated                 # to check changes made at staged level
+
+git reset filename.formatoffile    # unstaged changes after reset
+git restore --staged filename      # to unstaged file after staged
+git.checkout filename.format       # remove changes that are made
+git checkout .                     # removes all changes from all files that are made after last commit
+git checkout -f                    # remove all changes from all files and give clean working tree
+
+git clone SSH_URL_Repositary .      # paste all files of that repositary in folder from where we git bash this will download all files from any public repositary
+if we add space and dot at end then it will not create new folder only files will download
+git clone SSH_URL_Repositary mypanda     # download remote repositary into creates mypanda repositary
+
+touch .gitignore        # create .gitignore file that ignore particular file which we have mention in it
+notepad .gitignore      # open .gitignore files in notepad
+
+git branch              # show branch name
+git branch loginststyemn      # create new branch to work on
+git checkout loginststyemn     # to switch between branches
+git checkout -b loginsystem     # create new branch and also switch to that branch
+
+then add files to repositary by add ., commit, push to origin loginsystem then files will add to new repositary and master repositary will not change
+
+git merge loginsystem    # after change git branch to master this command to will merge login system to master branch and then push it to origin master 
+
+git branch -d loginsystem            # to delete login branch from computer after our work is done
+git branch -D loginsystem            # if we want to delete branch without merge it then first use delete command with d and then with D
+git push origin --delete loginsystem   # delete login branch from github
+
+rm -rf .git                 # this remove folder from git repositary
+
+git config --global alias.st status            # set git status = git st

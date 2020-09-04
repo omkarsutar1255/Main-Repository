@@ -1,0 +1,97 @@
+if 5 > 2:
+print("five is greater than two")            = without indentation
+
+x = 5              = x is variable and variable can store data values in it.
+
+int and str are the datatypes
+
+x, y, z = "orange", "banana", "cherry"           = assign values to multiple variables in one line:
+
+python databases = str, int, float, complex, list, tupple, range, dict, set, frozenset, bool, bytes, bytearray, memoryview.
+print(type(x))   = get datatypes of any object
+
+x = 1j           = complex datatypes
+set datatypes is the values of list or tupple are write in curly bracket.
+x = frozenset(set datatypes)            = frozen datatype
+x = b"hello"                   = bytes datatypes
+x = bytearrary(5)              = bytearray datatypes
+x = memoryview(bytes(5))       = memoryview datatypes
+
+setting the specific datatypes
+x = str(34)                = in this way we can set any datatypes to any values
+
+float also can be scientific numeber like x = 25e3
+
+if a = """multiline string""" then string will store in variable and we can three single quotes
+
+strings are array
+a = "hello world"     = print(a[0]) shows first character of string
+
+strings slicing, negatve indexing, string length, string methods (strip, lower, uppper, replace, split, capatalize, count, endswith, find, format, index, islower, isspace, etc.), check string(in, not in), string concatenation, string format(combine string and number), escape character(\ before illegal character)
+
+boolean values returns true or false values
+print(bool(enter output))         = show output is true or false
+
+omkar() = true
+if omkar():
+	print("runs the code")
+
+print(isinstance(x, int)) this also returns boolen value
+
+operators:
+arithmetic (+, -, *, /, %, **, //)
+assignment (=, +=, -=, *=, /=, %=, //=, **=, &=, |=, ^=, >>=, <<=)
+comparision (==, !=, >, <, >=, <=)
+logical (and, or, not)
+identity (is, is not)
+membership (in, not in)
+betwise(&, |, ^, ~, <<, >>)
+
+list = ordered, changeable and duplicate values
+list functions are len(), append(), insert(), remove(), pop(), del(), clear(), copy(), list(), extend(), count(), index(), reverse(), sort()
+
+tupple = unchangeable
+tupple are convert into list to be change values then convert into tupple
+del tupple for deleting
+
+dictionary = unordered and not duplicate values
+dictionary functions are get(), items(), len(), pop(), popitems(), del, clear(), copy(), dict(), etc.
+
+set = unordered, unindexed, not duplicate values
+set function are add(), update(), len(), remove(), discard(), pop(), clear(), del, union(), set(), copy(), etc.
+
+*args are allow funtion argument/parameter to take tupple.
+list is directly take as argument without *args 
+**kwargs are allow function argument/parameter to take dictionary
+
+def func(default = "omkar"):
+	print("if function call without argument, it uses" + default + "value")
+func()                        = without argument
+
+x = lambda a, b : a * b        lambda take two values a & b and returns a * b
+print(x(5, 6))                
+
+array is nothing but list in python
+
+class student(person):                        = student class take properties of person class
+    def __init__(self, fname, lname):
+	person.__init__(self, fname, lname)   = adding call to parent's __init__ function and we can use super() instead of name of parent class.
+
+x = 150                   = global variable, it is avaiable for any function
+h = 750
+def omkar():
+	global h	  = to channge value of global variable inside a function
+	h = 450            
+	global z          = global keyword makes the variable global
+	z = 500           
+	x = 300           = local variable
+	print(x)          = its only available inside the function not for outside function
+omkar()          
+print(x)                  = this will return gbobal variable x = 150
+
+(json.dumps(info, indent=4, sort_keys=True, separators=(". ", " = "))      = to separate values with "." and "="
+
+regular expression or regex = its use to manipulate large strings
+
+random.rand() use to generate random float
+random.randint() use to generate random number

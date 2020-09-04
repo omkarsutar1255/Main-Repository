@@ -1,0 +1,63 @@
+	git --version
+	
+	pwd
+	ls
+	cd Foldername
+	
+	git status
+	git clone SSH_URL_Repositary .
+	git clone SSH_URL_Repositary mypanda
+	git init
+	git log
+	git log -p
+	git log --stat	
+
+	git branch
+	git branch -M master
+	git branch loginsystem
+	git checkout loginsystem
+	git checkout -b loginsystem
+	
+	git config --global user.name "your name"
+	git config --global user.email "youremail@gmail.com"
+	
+	touch .gitignore
+	notepad .gitignore
+
+	git rm filename.format
+	git mv filename renamename
+	git rm --cached filename
+	
+	git diff filename.txt
+	git commit -a -m "direct commit"
+	git add -A  or git add --a
+	git add .   or git add filename.format
+	git add -u
+	git diff --staged filename.txt
+	git diff --staged
+	git reset filename.formatoffile
+	git restore --staged filename
+	git checkout filename.format
+        git checkout .  
+	git checkout -f
+	git commit -m "version 1"
+	git commit --amend
+	git branch -v
+	git branch --merged
+	git branch --no-merged
+	
+	git branch -d loginsystem
+	git branch -D loginsystem
+	
+	git remote add origin git@github.com:omkarsutar1255/newforlearn.git
+	git remote -v
+	
+	git push -u origin master
+	git push origin loginsystem:mybranch
+	git push -d origin mybranch
+	git pull origin master
+	
+	git merge loginsystem
+	git push origin --delete loginsystem
+	
+	git rm -rf .git
