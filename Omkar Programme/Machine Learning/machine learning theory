@@ -1,0 +1,29 @@
+UCL    - we can take machine learning data from this website
+There are many types of machine learning model :
+1) Supervised machine learning : machine knows the feature
+    1) Classification - classify which label a given set of features belong to.
+       ex. = if we give machine apple, banana, mango and set what fruit is what then next time when we give image of
+             fruit to machine it will check features of it and give label of that fruit that is apple or mango or banana
+    2) Regression - Find out the value of the label using previous data.
+       ex. = if we give data of homes with their area, window and price then next time when we give area and window of
+             some home then machine will tell its price
+2) Unsupervised machine learning : Machine seeing data for the first time
+    1) Clustering - Discover the inherent grouping in the data, such as grouping customers by purchasing behavior
+    2) Association - Association rule learning problem, such as people that buy X also trend to buy Y.
+
+Training and test data in machine learning
+Total data is divided into training data and test data
+Training data - to prepare machine learning model first feed some data that is maybe half of total data
+Test data - remaining data is feed to machine model without end result and after machine give end result of that data
+            we check that with original end result hence if both results are almost same then machien learning model is
+            successful.
+
+Simple Linear Regression - predicting label on the bases of only one type features
+1) Setting features and label in ascending order on a graph
+2) Draw one straight line for all intersecting points with minimum error(distance from line to point) and on that line
+   we can predict label by giving features only
+3) here SST is sum of squares of errors
+
+Multiple Linear Regression
+1) It takes multiple types of features to predict label pricing in machine learning
+2) f(X1, X2,..., Xn) = Wo, W1X1, W2X2,.., WnXn. here X1 - Xn are the types of features and W1 - Wn are prediction
