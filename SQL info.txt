@@ -1,0 +1,728 @@
+8. Describe table in SQL(Hindi)
+desc - This is used to describe your table. DESC only describes structure of table not the information (rows) inside table. DSCE is short form of describe.
+syntax - desc table_name;
+Ex - desc my_tab;
+
+9. Show datebase and table
+show database - This command is used to view all the database name.
+syntax -  show database;
+
+show tables - This command is used to view all tables of current database.
+syntax - show tables;
+
+10. INT and DEC Data Types
+INT or INTEGER - It holds whole number between -32,768 and 32,767 either it is negative or positive. It can hold a decimal number. The maximum number of digitd may be specified in parenthesis.
+syntax - column_name INT(size);
+Ex - roll INT (5);
+
+DEC or Decimal(size, p) - 
+syntax - column_name Decimal(size, p);
+Ex - price DECIMAL(4, 2);   # 123 will be 123.00 by default 
+
+11. CHAR, VARCHAR and TEXT Data Types
+CHAR or CHARACTER - 
+syntax - column_name CHAR(20);
+Ex - name CHAR(20);
+
+VARCHAR -
+note = if we put a greater value than 255 it will be converted to a text type.
+syntax =  column_name varchar(size);
+Ex. = name varchar(50);
+
+TEXT - holds string with maximum length of 65,535 characters.
+Syntax = column_name text;
+Ex. = address text;
+
+12. date, datetime and timestamp data types
+date = it display date values in yyy-mmm-dd format.
+column_name date;
+ex = age date;
+
+date_of_join datetime; = it displays datetime values in yyyy-mmm-dd hh:mm:ss format.
+
+login_dt timestamp; = it also displays date and time.
+
+13. Example of ALL Data types
+
+14. Help and support
+write "help contents" = show all contents
+write "help data manipulation" shows all items of that
+
+    DATA MANIPULATION LANGUAGE
+15. Insert into
+write "insert into my_tab(column1, column2, column3,...,column23) enter
+write "values(34, 'omkar', 'sutar', 90755657);
+any value that goes into VARCHAR, CHAR, DATE, BLOB or TEXT column has single quotes around it. There are no need of quotes for numerical values(INT, DEC)
+
+Write "select * from new_tab;" and enter to show values of table.
+
+16. insert into without soecifying column name
+syntax - 
+insert into table_name
+values(value1, 'value2', 'value3', value);
+rules = the values order should be as same as column and we cannot leave any column
+
+17. insert into with changing oder of column 
+syntax -
+insert into table_name(column2, column1, column3, column4)
+values ('value2', value1, 'value3', value3);
+
+18. Insert into specified column
+syntax = insert into table_name(column3, column2)
+          values ('kolhapur', 'atish');
+
+19. insert into multiple rows
+insert into table_name (column1, column2, column3)
+values (values1, values2, values3)
+(values1, values2, values3);
+
+20. select all and perticular column records
+synax= select * from table;
+       select column1, column2 from table;
+
+21. single quotes problem 
+insert into new_tab (std_id, name)
+values (6, 'akshay's pagade'); = problem
+solution = values (6, 'akshay\'s pagade');
+
+22. select with limit
+select * from new_tab limit 2;  = to show limited rows from table
+select * from new_tab limit 2, 4; = give upper and lower limits
+note = upper and lower limit + 1 rows numbers will be considered
+select std_id, address from new_tab limit 2, 4;
+
+23. Where clause and equal operator
+select * from new_tab
+where name = 'omkar sutar';     = this will show full row which contain that name
+Note = Value can be text or numeric. If it is text then we have to put single quotes.
+
+24. where clause and not equal operator
+select * from new_tab
+where address != 'mattiwade';
+
+25.where clause and greater than less than
+select * from new_tab
+where stu_id > 4;
+where stu_id < 4; 
+where stu_id >= 4;
+where stu_id <= 4;   use any one of these four
+where name > 'j';    use to find words which start from j and next any spell of j
+where name < 'j';    use to find words which start from previous any spell of j
+where name <= 'j';   use to find words which start from j and next any spell of j
+
+26. is null and is not null
+select name from new_tab
+where name is null;          = to show null values in column
+where name is not null       = to show without null values in column
+
+27. AND operator
+select * from new_tab
+where address is null        
+and name = 'avdhut patil';    = where both condition true that row will be display
+
+28. OR operator
+select * from new_tab
+where address = 'mattiwade'       
+or name = 'omkar sutar';    = where at least one condition true that row will be display
+
+29. combination of and & or operators
+select * from new_tab
+where address is null and                         = this condition must true
+(name = 'avdhut patil' or name = 'omkar sutar');  = at least one condition must true
+we can use first or then (And)
+
+30. in operator
+select * from new_tab
+where name in ('omkar sutar', 'avdhut patil');   = shows rows having name omkar and avdhut
+
+31. not in operator
+select * from new_tab
+where name not in ('omkar sutar', 'avdhut patil');   shows rows which don't have name omkar and avdhut
+
+32. between number
+select * from new_table
+where std_id between 3 and 8;       show between that 3 and 8 values (also show 3 and 8)
+
+33. between text
+select * from new_table        
+where name between b and s;       show between that b and s values only starting letter (only show b not s)
+
+34. between date
+select * from new_tab
+where date between '1989-08-26' and '1999-06-06';   shows date between that two number
+
+
+35. not between number
+select * from new_table
+where std_id not between 3 and 8;       show which not between that 3 and 8 values (also don't show 3 and 8)
+
+36. not between text
+select * from new_table        
+where name not between b and s;       show which not between that b and s values only starting letter (shows s not b)
+
+37. not between date
+select * from new_tab
+where dob not between '1989-08-26' and '1999-06-06';    show date which are not between these two dates
+
+38. between with in
+select * from new_tab
+where (std_id between 3 and 6) and/or           = shows rows that between 3 to 6 as well as has name omkar sutar and avdhut patil
+name in ('omkar sutar', 'avdhut patil');
+
+39. between with not in
+select * from new_tab
+where (std_id between 3 and 6) and/or           = shows rows that between 3 to 6 as well as has't name omkar sutar and avdhut patil
+name not in ('omkar sutar', 'avdhut patil');    = we can use not name in instead of name not in
+
+wildcards
+1. % = zero or more characters
+    'geek%' for word 'geekshows'
+    '%shows' for word 'geekshows'
+    '%eksho%' for word 'geekshows'
+2. _ one single character
+'s_ow_- for word 'shows'     =  similar with at start and end and both start and end
+
+40. like with % wildcard
+select * from new_tab
+where name like 'omkar%';
+
+41. like with _ wildcard
+select * from new_tab
+where name like '_omk_r su_ar';
+
+42. like with [charlist] wildcard  = not support in MySQL
+
+43. not like
+select * from new_tab
+where name not like '%sutar';    = shows rows except rows having %sutar
+
+44. order by descending order
+select * from new_tab
+order by name desc;           = descending order for name is alphabetical z to a
+order by std_id desc;         = descending order for int is higher number to lower number
+order by dob desc;            = descending order for date is oldest first
+                              = null at last for descending
+
+45 order by ascending order
+select * from table
+order by std_id asc;              = to rearrange table in ascending order
+                                  = null at first for ascending order
+
+46. not null
+create table student
+(
+name varchar(30)'
+roll integer (5),
+mobile_no integer (10) not nul      = its manditory to fill mobile no column
+);
+
+47. unique key
+create table student
+(
+name varchar(30)'
+roll integer (5) unique key,       = this column will not allowed to have same values but can have null value multiple times
+mobile_no integer (10)
+);
+
+48. primary key
+primary must contains unique values
+primary key column cannot contain null values
+most table should have one primary key and each table can have only one primary key
+create table student
+(
+name varchar (30),
+roll integer (5) not null primary key,
+mobile_no integer (10)
+);
+                          OR  (can also write primary key seperately)
+create table student
+(
+name varchar (30),
+roll integer (5) not null,
+mobile_no integer (10),
+primary key (roll)
+);
+
+50. auto increment
+create table student
+(
+name varchar (30),
+roll int not null auto_increment_increment,     = start with 1 and increament by +1 every time don't have to mention column name every time. 
+                                       = if put null then it will change by increament
+                                       = due to primary with auto increament cannot take same values
+                                       = if forcefully add value in increament then it accepted and then start increament from that number
+mobile_no integer (10),
+primary key (roll)
+);
+
+51. starting auto increament with a perticular numher
+create table k_tab
+(
+id int not null auto_increment_increment primary key,
+name varchar (50)
+);
+alter table k_tab auto_increment_increment = 10;       = increament start with 10 instead of 1
+insert into k_tab (name)
+values ('ram'),
+('rahul');
+
+52. auto increament without specifying column name
+insert into k_tab
+values (null, 'kareena');         = increament ignore null values and put increament values instead
+
+53. Alias 
+aliases are used to temporarily rename a table name or a column name.
+syntax - select name from n_tab as k_tab;               = for table name
+         select name as vidyarthi_name from n_tab       = for column name
+         select name vidyarthi_name from n_tab          = as word for column is optional
+         select name as 'vidyarthi name' from n_tab   = two times single quotes take space as it is
+
+54. arithmetic operators  (+, -, *, /)
+syntax = select column_name, column_name operator value from table_name;
+ex = select std_id, name, address, fee, fee+1000 from new_tab;           = create new column having fee+1000 value
+select std_id, name, address, fee, fee+1000 as 'new marks' from new_tab;  = change column name
+select std_id, name, address, fee, fee+std_id as 'new marks' from new_tab;   = can add,sub,divide,multiply two columns using operators
+
+55. select distinct
+the select distinct shows different values from column
+select distinct address from new_tab;                   = don't show same address many times
+
+      DATA DEFINITION LANGUAGE
+56. alter table for adding one column without constraints
+alter table new_tab
+add column submitted int (10);             = created new column in same table with null values in it.
+
+57. alter table for adding multiple columns without constraints
+alter table new_tab
+add column dj varchar (30),                = created multiple column by comma at end
+add column track int (14);                 = its created at last position by default
+
+58. alter table for adding column by position without constraints
+alter table new_tab
+add column roll_no int (5) first;            = created column at first position of table
+add column nnn varchar (19) after name;      = create column after the name column
+
+59. alter table for adding column with constraints
+alter table p_tab
+add column roll int (10) not null auto_increment_increment,      = auto increament beacause primary key can't handle duplicate values,
+add primary key (roll);                                 = add constraints by put add constraints_name;
+
+60. alter table for adding column by position with constraints
+alter table p_tab
+add column email varchar(30) not null auto_increment_increment primary key after name;
+= adding column with constraints and position
+
+61. alter table for adding constraints in column
+alter table n_tab
+add constraint 
+unique key (prn);        = adding constraint unique key to prn column
+
+62. change column name and its data types without constraints
+alter table n_tab
+change column name student varchar (19);       = change column name and its datatype
+
+63. change more than one column name and its data types without constraints
+alter table n_tab
+change column name student varchar (19),
+change column city village varchar (19);       = add comma and repeat same thing for multiple changes
+
+64. change column name and its data type with constraint
+alter table n_tab
+change column name student varchar (20) not null,
+add primary key (email);                           change column constraint to primary key
+
+65. modify column data type and its size with or without constraint
+alter table n_tab
+modify column village varchar (10) not null,      = only change datatype and its size
+add unique key (village);                         = also add constraint to it
+
+66. drop column with or without constraint
+alter table n_tab
+drop column prn;                     = delete column from table
+drop index email;                    = delete constraint only from table
+
+note = sometimes use brackets for email, sometimes first convert column not null to null then drop unique constraint, sometimes first convert null to not null then drop primary constraint
+
+67. drop table or delete table from databases
+drop table my_tab;
+
+68. dalete data of table using truncate table
+truncate table omk;            = only data of table not table
+
+69. reaname table name using raname table
+rename table n_tab to sut;                        = raname table use 'to' between table names
+
+70. alter databases using alter databases
+syntax = alter database database_name;
+Ex     = alter database omkar;             = this enable you to change the overall characteristics of a database
+
+71. delete database using drop database
+drop database omkar;                  = it is use to delete database
+
+72. show columns
+show column from omk;          = it is just like desc omk
+
+73. show create database
+syntax = show create database omk;           = Its shows commands which you have written while creating your database. And its uses when we have to alter database.
+
+74. show create table
+syntax = show create table omk;              = Its shows commands which you have written while creating your table. Use that table by Copy that table and do some correction.
+
+75. update records in table            = this will update columns with only one row
+its use to update existing records in table.
+update omk                                    = Table name which want to update
+set name = 'akshay', mobile = 997042          = what parameter want to update
+where sr_no = 2;                              = which row want to update
+note :- where is necessary otherwise all records will be replace with given value
+
+77. update with case                  = this will update rows of only one column
+update student                        = table name which update
+set result =                          = column name which update
+case
+	when mark >= 300 then 'first'                    = condition for update
+	when mark < 300 and mark >= 250 then 'second'
+	when mark < 250 and mark >= 150 then 'third'
+	else 'fail'        
+end;                                                     = condition end
+
+78. delete records in table
+delete from sut
+where stid = 3;                 = delete row from table
+
+delete from omk;                = delete all rows from table
+
+79. copy old table to new table within same database
+create table shubham like sut;                     = it create new table with same column, datatypes and constraints as it is
+insert shubham select * from sut;                  = copy one table records and paste into other table
+
+80. copy old table to new table different database
+create table harshad like omkar.sut;               = create table from other database table
+insert harshad select * from omkar.sut;            = insert records which copied from other database table
+
+81. min and max function
+select min(marks) as marks from sut; = smallest value of selected column
+select max(marks) as marks from sut; = largest value of selected column
+
+82. sum and average function
+select sum(marks) as mark from sut; = total sum of numeric column
+select avg (marks) as mark from sut; = average value of numeric column
+
+83. square root function
+select marks, sqrt(marks) as sqmark from sut; = square root of a numeric column
+
+84. decimal data types
+marks decimal (T,D)
+where T = total digits range 1 - 65
+      D = digits after decimal. range 0 - 30
+      condition = D not greater than T
+decimal is also called dec, numeric, fixed.
+marks decimaal(10, 0); = marks decimaal(10); = marks decimaal;           = by default (10, 0)
+use = decimal is used instead of inteter when value is in decimal format
+
+create table product
+(
+pname varchar (20) not null,
+pprice decimal(7, 2) zerofill         =  add zeros to number to achieve 7 digit value
+);
+
+insert into product
+values ('mobile', 16999.25),
+('phone', 10345.75);
+
+85. round function
+select pprice, round(pprice, 1) as newprice from product;          = its round up deciaml values
+select pprice, round(pprice) as newprice from product;             = its round up to zero decimal
+
+86. count function
+select count(pname) from product;            = show number of values without null from column
+select count(distinct city) from sut;        = show number of distinct values from column
+select count(*) from omk;                    = show number of rows saved in the tables
+select count(pname) from sut
+where pname = 'notebook';
+
+87. uppper and lower function
+select upper(pname) from product;             = convert values of column in upper case
+select ucase(pname) from product;
+select lower(pname) from product;             = convert values of column in lower case
+lower(pname) = lcase(pname)
+
+88. mid and length function
+select mid(pname, 1, 3) from prduct;                  = extract characters from column values
+mid() == substring()
+
+select pname, length(pname) from product;                   = length of column values
+
+89. concat function
+select concat(pprice, ', ', (select mid(pname, 1, 3))) as concat from product;
+= concat join two strings
+
+90. reverse function
+select reverse(pname) from product;             = it reverse the words in column
+
+91.  now function
+select pname, pprice, now() from product;            = now() shows present datea and time
+
+92. group by
+select pname, min(pprice) from product group by pname;          = order by function gather same values from pname and apply min price on them
+select pname, count(*) from product group by pname;
+
+93. having clause
+select pname, min(pprice) from product group by pname having min(pprice) > 1000;
+values that fit in condition of having will only show
+
+94. why do we need multi table
+If there is multiple values in one records then create multiple tables
+
+95. relationship between tables
+customer > order > product
+one to one = one value in one table
+one to many = one value in many table
+many to many = many values in many tables
+
+96. one to one relationship
+two tables are join by one same column with values but usually two tables are write in one table so to avoid more running time.
+
+97. one to many relationship
+one value of one column of one table is use many times in more tables to connect
+
+98. many to many relationship
+here we have to make third table to join two tables.\
+make two column in that third table.
+use primary key columns values of two table in that third table.
+
+99. what is normalization
+its minimize duplicate records from table
+1 NF = one to one relationship
+2 NF = one to many relatiopship
+3 NF = 3 tables split into 6 tables
+
+100. first normal form 1 NF
+column of table cannot hold multiple values
+it can also write in one to one relationship
+
+101. second normal form 2 NF
+table is in 1 NF (First Nomal Form)
+No non-prime column is dependent on proper subset of any candidate key of table.
+in other words any non key column must depend on primary key column
+if dont then convert into one to many relationship
+
+102. third normal form 3 NF
+table must be in 2 NF
+Trasitive functional dependency of non prime attribute on any super key should be removed
+non key column should not dependent on non key column
+if it dependent then create one more table
+
+103. short note about normalization
+compare two methods
+1 = create more columns for 1 NF
+2 = create more tables for 1 NF
+which method will create less records that way is more efficient
+
+104. what is foreign key
+A foreign key in one table points to a primary key in another table.
+A foreign key can have a different name than the primary key it comes from.
+primary key used by foreign key is also known as parent key.
+The table where primary key come from is known as parent key.
+foreign key have values that must be in primary key values.
+foreign key values can be null even though primary key values can't.
+
+105. create table with foreign key
+create table department
+(
+D_id int not null primary key,
+D_name varchar (40),
+E_id int,
+constraint employee_Eid_fk                    = its optional
+Foreign key (E_id) references employee (E_id)
+);
+
+106. Create table with foreign key
+create table employee
+(
+eid int not null primary key,
+ename varchar (40),
+address varchar (40)
+);
+create table department
+(
+did int not null primary key,
+dname varchar (40),
+empid int not null,
+foreign key (empid) references employee(eid)
+);
+
+107. how to find constraint name
+select * from information_schema.table_constraints
+where table_name = 'department';
+
+108. drop foreign key from table
+alter table department
+drop foreign key department_ibfk_1;
+
+109. add foreign key constraint in a table
+alter table department
+add column empid int not null,                 = if want create new column for foreign key
+add constraint employee_eid_fk                 = must write in adding case
+foreign key(empid) references employee(eid);
+
+110. unable to delete parent table
+drop table employee;   = cannot delete parent table unless delete child table
+
+111. unable to delete parent table records
+unless the record of parent table use in child table that record will not delete from parent table
+first delete record from child table then it allow to delete from parent table
+
+112. on delete clause
+on delete cascade
+on delete set null
+on delete no action
+on dalete restrict
+
+113. on delete cascade
+while create child table use 'on delete cascade' line after references this allows delete record of parent table directly and that record also delete from child table as well 
+create table department
+(
+did int not null primary key,
+dname varchar (40),
+empid int not null,
+constraint employee_eid_fk
+foreign key(empid) references employee(eid)
+on delete cascade
+);
+
+114. on delete set null
+silimarly as cascade
+difference is it will set null values at deleted records in child table
+
+115. on delete no action or on delete restrict
+if directly delete parent table records without deleting from child table and database allows this action then to restrict this use "on delete no action or on dalete restrict"
+but usually by default its in the database
+
+116. on update clause
+on update cascade
+on update set null
+on update no action
+on update restrict
+
+117. on update cascade
+if we do
+	update employee
+	set eid = 10
+	where eid = 2;
+then records of 2 in parent and child table will update with 10.
+
+118. on update set null
+if we do
+	update employee
+	set eid = 10
+	where eid = 2;
+then records of 2 in parent table will update with 10 but in child table records 2 will update into null
+
+119. on update no action or on update restrict
+on update restrict is by default
+this not allows you to update parent table without change in child table
+
+120. composite key
+when we access records uniquely from two or more than column then that column known as composite key
+primary key (course_code, date)    = use two column in primary key while create table
+and to retrieve use where & and statement
+
+121. shorthand notation
+if two tables have same column name like roll_no then use tablename.columnname
+ex. - composite_key.course_code
+
+122. how to join tables
+one table should have primary key and other should have foreign key to join tables
+one table can have only one primary key but the can have multiple foreign key
+child table can have thier multiple child tables and can have multiple parent tables
+
+123. cross join
+select * from employee cross join department;
+select ename, dname from employee cross join department;
+select * from employee, department;                            = cross join is optional
+If employee and department records are same
+then In employee, department every row of employee join with first row of department then every row of employee join with second row of department
+else every records small table join with first record of big table then every to second
+
+124. inner equijoin
+select column_name from employee
+inner join department
+on eid = empid;                          = if column name same then use shorthand notation
+this show bigger table with putting values of small table in it
+if the tables are same then show values of table which mention in inner join statement with putting values of other table in it
+
+125. Inner non equijoin
+same as equijoin only difference is use <> instead of =
+It shows parent table's perticular value is not connect to which rows of child table.
+
+126. natural join
+select column_name from table1
+natural join table2
+this works absolutely same as equijoin with condition of primary key column name of parent table is exact same as foreign key column name
+
+127. outer join
+an outer joins returns all rows from one of the tables, alon with matching information from another table.
+= left outer join / left join
+= right outer join / right join
+= full outer join / full join
+
+128. left outer join
+The left join keyword returns all rows from the left table, with the matching rows in the right table.The result is nuil in the right side when there is no match.
+In a left outer join the table that comes before the join is the left table, and the table that comes afterr join is the right table.
+select column_name from table1                  = this is left table
+left join table2                                = this is right table
+on column_name = column_name;
+
+129. right outer join
+The right join keyword returns all rows from the right table, with the matching rows in the left table.The result is nuil in the left side when there is no match.
+In a right outer join the table that comes before the join is the right table, and the table that comes afterr join is the left table.
+select column_name from table1                   = this is right table
+right join table2                                = this is left table
+on column_name = column_name;
+
+130. full outer join
+The full outer join returns all rows from the left table and from the right table.
+The full outer join combines the result of both left and right joins.
+select column from table1
+full join table2
+on column_name = column_name;
+
+131. what is self join
+self join is a table joined to itself
+
+132. why do we need self join
+To reduce duplicate table having same records
+if rahul have id no 4 and its manager id is 3 and akshay have id no 3 and its manager id is 2 in this case instead of creating two tables make one table and call it with self join to join table.
+
+133. self join example
+select e.name Name, m.name Manager from empman e           = table name e
+inner join empman m                                        = create second table m
+on e.manid = m.empid;                                      = join two column of table which want to relate
+
+select s2.name Name, s2.city City from student s1               = if s1 is used then it will only show rahul because s1.name = 'rahul' in last line
+inner join student s2
+on s1.city = s2.city and s1.name = 'rahul';
+
+134. replacing null
+select ifnull(name, 'noname') from newtab;
+use coalesce instead of ifnull if have to add more than one columns
+
+135. union
+select dname, empid from department
+union
+select depname, empid from dep order by empid;                    = it shows all values from combine two column(don't show duplicate values)
+
+136. union all
+union all = returns duplicate values also
+same as union only use union all instead of union
+
+137. intersect and except
+intersect returns only those values that are in both column
+select dname, empid from department
+intersect
+select depname, empid from dep order by empid;          = mysql not support intersect
+
+except returns those records that are in first column but not in second column
+select dname from department
+except
+select depname from dep;                                = mysql not support intersect
