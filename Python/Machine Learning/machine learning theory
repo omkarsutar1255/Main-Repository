@@ -1,4 +1,7 @@
 UCL    - we can take machine learning data from this website
+Machine learning model take data in 2D array as features and 1D array as target to train machine
+And again take 2D array as label and give 1D array of
+
 There are many types of machine learning model :
 1) Supervised machine learning : machine knows the feature
     1) Classification - classify which label a given set of features belong to.
@@ -15,15 +18,81 @@ Training and test data in machine learning
 Total data is divided into training data and test data
 Training data - to prepare machine learning model first feed some data that is maybe half of total data
 Test data - remaining data is feed to machine model without end result and after machine give end result of that data
-            we check that with original end result hence if both results are almost same then machien learning model is
+            we check that with original end result hence if both results are almost same then machine learning model is
             successful.
 
+1. simple linear regression
 Simple Linear Regression - predicting label on the bases of only one type features
 1) Setting features and label in ascending order on a graph
 2) Draw one straight line for all intersecting points with minimum error(distance from line to point) and on that line
    we can predict label by giving features only
-3) here SST is sum of squares of errors
+3) here SSE is sum of squares of errors
 
-Multiple Linear Regression
+2.Multiple Linear Regression
 1) It takes multiple types of features to predict label pricing in machine learning
 2) f(X1, X2,..., Xn) = Wo, W1X1, W2X2,.., WnXn. here X1 - Xn are the types of features and W1 - Wn are prediction
+
+3. lasso regression
+4. logistic regression
+5. support vector machine (SVM)
+6. Multivariable regression
+
+Loss function and gradient descent :
+1) Types of loss function:
+    1) mean Absolute error   (MAE)
+    2) sum of squared error (SSE)
+    3) mean of squared error (MSE)
+    4) Root mean squared error (RMSE)
+    5) Manhattan norm
+    6) Cross-Entropy
+    7) Hinge
+    8) Huber
+    9) Kullback-Leibler
+2) Gradient descent error
+
+Mini Batch and Stochastic Gradient Descent :
+1) Gradient descent takes all data and create model on that then check loss function using actual label
+    then update parameter of model and so on hence for million of data updating model data will be difficult
+2) Stochastic gradient descent takes one parameter create model then check error using actual label and update single
+    data hence for big data updating single data point at a time will be time consuming
+3) Mini Batch takes n number of points of data in a batch create model for every n number of points
+    such as it can be mini batch of 100 values out of million data
+
+Classification supervised machine learning :
+-it takes many features and label for train classifier and then when we give new features to it,
+    it will tell what label it belongs to.
+1.KNN - K Nearest Neighbors = while train classifier it plot spam and not spam values on graph and at testing time it
+        look near point of test point and check most of near point are spam or not then depend on that it show test point is
+        spam or not. K value means how much distance from test point should consider to get best output
+        It is very useful for small data set but for large dataset it takes time to get best K value
+
+Overfitting and underfitting
+1) Underfitting = It means fitting line on data point while training and also on testing point
+2) Overfitting = It fits line on training data point and copying pattern of line so we can tell approximately
+                 new data point
+                 To improve overfitting model takes data from training data and check that model created line for
+                 approximation prediction is how much correct.
+
+2. Logistic regression (classifier):
+1) It give result between 0 to 1 that means 0% to 100%
+2) It predict target value by using linear regression and then fits in sigmoid function that convert it into a value of
+    0-1 hence if sigmoid function give value above 0.5 then it considered as 1 and below 0.5 is 0.
+    In this way logistic regression classifier works.
+
+3. stochastic gradient descent (classifier):
+4. naive bayes
+5. decision tree
+6. random tree
+7. support vector machine(SVM)
+
+bunch.Bunch() for loading data into a bunch.
+
+Batch learning : data feed at one time for create model
+online : data is continuously coming for machine learning.
+
+Which algorithm should choose
+
+Classifier : Through accuracy we can check model but there are other ways like matrix confusion.
+precision in confusion matrix - percentage of correct prediction of positive values out of total prediction
+recall in confusion matrix - percentage of correct prediction of positive values out of total positive values
+F1 score - (2*Precision*Recall)/(Precision + Recall)

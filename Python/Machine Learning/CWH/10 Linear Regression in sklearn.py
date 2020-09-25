@@ -7,12 +7,12 @@ diabetes = datasets.load_diabetes()          # loading dataset of diabetes
 print(diabetes.keys())       # it shows keys from dataset
 # (['data', 'target', 'frame', 'DESCR', 'feature_names', 'data_filename', 'target_filename'])
 
-# print(diabetes.data)          # it shows data in numpy array form
-# print(diabetes.DESCR)         # it gives description of dataset
+print(diabetes.data)          # it shows data in numpy array form
+print(diabetes.DESCR)         # it gives description of dataset
 
 # diabetes_X = diabetes.data[:, np.newaxis, 3]   # : gets all values from 3rd column and put init numpy array
-# print(diabetes_X)
-diabetes_X = diabetes.data                        # giving all data of all types of features (we cant plot this)
+# print(diabetes_X)                                  # simple linear regression
+diabetes_X = diabetes.data       # giving all data of all types of features i.e. multiple regression (we cant plot this)
 
 diabetes_X_train = diabetes_X[:-30]              # getting feature values except last 30 values to train
 diabetes_X_test = diabetes_X[-30:]               # getting last 30 feature values to test our programme
@@ -25,7 +25,8 @@ model = linear_model.LinearRegression()          # making model of linear regres
 model.fit(diabetes_X_train, diabetes_Y_train)    # giving value to model to train
 
 diabetes_Y_predicted = model.predict(diabetes_X_test)     # giving values to model to predict
-
+print(diabetes_Y_predicted)                     # Its machine prediction value of y target
+print(diabetes_Y_test)                          # Its original values of y target
 print("mean squared error is : ", mean_squared_error(diabetes_Y_test, diabetes_Y_predicted))
 # checking spread of points from simple linear regression line
 
