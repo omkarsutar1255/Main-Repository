@@ -1,0 +1,4 @@
+1)Tableau has different types of symbol for different types of values like   categorical, numerical, boolean, date, datetime, etc.
+2)Tableau has two feature -  
+  1.Live - if data is remotely store and updates every time then tableau allows us to work on data using Live function.
+  2.Extract - if data is less then we can get the whole data and perform operation within tableau software.

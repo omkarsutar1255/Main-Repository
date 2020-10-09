@@ -1,0 +1,75 @@
+01. Introduction to deep learning
+types of deep learning:
+1)ANN, 2)CNN, 3)RNN.
+1)Artificial neural network (ANN)
+    First layer in deep learning neurons have inputs neurons
+    Next layer can have many hidden neuron for precessing data
+    Final layer can have multi neurons which show outputs
+
+02. how neural network works
+1) Takes features(x1) in input neurons then in hidden neurons assign some weights(w1) to that features
+2) now calculate Y (Y=x1*w1 + x2*w2 + x3*w3.. so on)
+3) passing Y in activation function(like sigmoid, relu) and get Z (Z=act(Y))
+4) again that Y assign with some weight and this process repeats until we get output
+
+03. Activation function (AF) - part 1
+1)Sigmoid AF: Y is passed through AF then sigmoid AF assign that Y within 1 to 0. If AF value is more than 0.5 then that
+    neurons gets activated.
+2)Relu AF: It is more used AF function. In relu if value is negative then it considered as 0 and for positive values
+    it considered respective positive values.
+
+04. Train Neural Network with BackPropagation
+Giving inputs to deep learning model which will predict output. if the prediction is wrong it will calculate
+loss ((actual-prediction)^2) after getting loss function it uses optimizer like gradient descent, stochastic gradient
+descent, etc to minimize loss. That create new weight depends on learning rate and update weights in neural network
+until loss gets reduced.
+
+05. Train MultiLayer Neural Network and Gradient Descent
+06. Chain Rule of Differentiation with BackPropagation
+
+07. Vanishing Gradient Problem
+    Sigmoid optimizer gives derivative value 0-0.25 for first backPropagation layer then again less for second layer &
+    and some point it is very less so that new weight and old weight are getting same hence to vanishing gradient
+    problem and use more number of layers in neural network ralu optimizer is used.
+
+08. Exploding Gradient Problem
+    For higher weights in neural network gives high values when pass in derivatives hence while calculating new weights
+    it will have more gap between old and new weights and due to this we will not come to min gradient value.
+
+09. Drop Out and regularization Layers in Multi Neural Network
+    Drop out rate is always between 0 to 1. It means if we have dropRate(p)=0.5 then for that particular layer 50% of
+    neurons get activated and 50% not activated.
+
+10. Rectified Linear Unit(relu) and Leaky Relu
+    In Relu if Z value is below 0 then its differential is 0 and if Z value is more than 0 then its differential is 1.
+    Z>0 = 1, Z<0 = 0. In relu it can provide 0 value for z<0 hence whole multiplication will be zero and neuron weight
+    will not change. But in Leaky relu for z>0 = z and for z<0 = 0.01(some small value).
+
+11. Various Weight Initialization Techniques in Neural Network
+    Keys Points - 1)Weight should be Small, 2)Weight should not be same, 3)Weight should have good variance
+    Techniques - 1)Uniform Distribution, 2)Xavier/Gorat Distribution(Normal and Uniform) 3)He init(Normal and uniform)
+
+12. Stochastic gradient descent vs gradient descent
+    Gradient descent directly get global minima but it requires more computational memory to perform
+    whereas in mini batch S.G.D. the data is converted into mini batches and then in zigzag way global minima will get.
+    hence it takes more time with less memory capacity for mini batch S.G.D.
+
+13. Global Minima and Local Minima in Depth Understanding.
+    If there are many gradient descent then for each descent it will have their own local minima and maxima. and In
+    comparision of these minima which is lowest minima is global minima and In comparision with these maxima which is
+    greatest maxima is global maxima.
+
+14. Stochastic gradient descent with momentum
+    Reducing zigzag way to straight in mini batch S.G.D. for reducing processing time
+
+15. Adagrad Optimizers in Neural Network
+    Changing value of learning rate for each neurons. For first iteration learning rate will little more bigger then as
+    iteration going on learning rate decrease and due to this change in weight in back propagation will be more in start
+    and less in future iteration.
+
+16. AdaDelta and RMSprop optimizer
+
+
+*2. Convolution Neural Network(CNN)
+    - When we work with images and videos then use CNN. here we can do object detection, face classification,
+    object classification, object recognition, etc. 
