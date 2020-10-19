@@ -1,3 +1,21 @@
+4. Start MySQL
+c:\mysql\bin>mysql -u root -p
+
+5. Create Database in mysql
+CREATE DATABASE database_name;
+NOTE: Name should start with alphabet and Blank space or single quotes are not allowed
+
+6. Use Database in MySQL
+USE database_name;
+Note: Mysql is not case sensitive
+
+7. Create Table in MySQL
+CREATE TABLE table_name(
+column_name1 data_type (size) [constraints],
+column_name2 data_type (size) [constraints],
+column_name3 data_type (size) [constraints]);
+Note: constraint are NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT.
+
 8. Describe table in SQL(Hindi)
 desc - This is used to describe your table. DESC only describes structure of table not the information (rows) inside table. DSCE is short form of describe.
 syntax - desc table_name;

@@ -2,3 +2,47 @@
 2)Tableau has two feature -  
   1.Live - if data is remotely store and updates every time then tableau allows us to work on data using Live function.
   2.Extract - if data is less then we can get the whole data and perform operation within tableau software.
+
+
+Tutorials POins (India) Ltd.
+1)Tableau divided data into Dimensions(text, date, geographical things) and Measures(numbers, figures and float values). tableau has 24 different charts
+
+2)Tableau Vs Excel
+click insert click pivot table this allow us to analysis data in excel and also create various charts
+
+3)Tableau live vs extract
+live- working on changing data with time and extract- taking snapshot in your computer and offline analysis data
+
+4)Tableau Data Types
+# = numbers
+abc = string or taxt
+calender icon = date datatypes
+global icon = geographical datatypes(city, country, south, north, etc..)
+boolean values = true or false
+date and time values = 
+
+5) view data
+we can view data upto some rows
+click on drop down and select hide to hide columns and click in show hidden fields to show hiden fields and make them unhide.
+
+6)column formatting
+rename column name, reset name, copy paste column values from tableau to excel, split column, add custom seperator.
+
+7)Sort
+click checkbox of sort fields - select way of sorting column names
+click on small icon at column names so the values in that column get sorted
+
+8)Drill down and hirearchies
+adding one category into another category by drag one column on another column we can create multiple hierearchies and also can change hierearchies. we can also use continues and discreate viz data
+
+9)sorting (swap rows and columns and sort by ascending or descending order)
+quick sort i.e. ascending and descending order can be done by clicking on three dot at column names of charts.
+we can swap fields of raws and columns by press ctrl-w or click on option of tableau on option bar and checkbox at column names.
+we can drag third column like profit into labels to labels chart or into colors to gives colors to charts. and according to ascending or descending order of profit charts can be set.
+
+10)Grouping
+control select columns to group and right click and select group option there. this will create new column name group.
+
+11)measure names and values
+double click on measure values to show graphs of measures columns
+
