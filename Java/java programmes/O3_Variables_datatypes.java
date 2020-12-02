@@ -1,8 +1,10 @@
-package com.company;             // group of java classes (usually name as company name)
+package com.company;             // group of java classes (usually company name)
 
-public class Omkar_3_Variables_datatypes {              // classes in java
+public class O3_Variables_datatypes {              // classes in java
 
-    public static void main(String[] args) {      // functions of classes
+    public static void main(String[] args) {      // functions of classes and void means return nothing from function
+                                    // public means we can access this function from anywhere
+        // static allows us to run this function without making object
 	// write your code here
         System.out.println("hello word");           // println set new line at end
         System.out.print("Sum of three number is : ");  // we can use print for same line
@@ -15,3 +17,5 @@ public class Omkar_3_Variables_datatypes {              // classes in java
 }
 // Classes names are in PascalConvention i.e. FirstLetterOfEveryWordIsCapital
 // functions names are in camelCaseConvention i.e. firstLetterOfFirstWordIsSmall (other words first letter should capital)
+
+// primitive data types in java - int, long, double, short, byte, float, char, bool.

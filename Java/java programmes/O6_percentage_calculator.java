@@ -1,7 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
-public class Omkar_6_percentage_calculator {
+public class O6_percentage_calculator {
     public static void main(String[] args) {
         System.out.println("CBSC percentage calculator");
         Scanner sc = new Scanner(System.in);

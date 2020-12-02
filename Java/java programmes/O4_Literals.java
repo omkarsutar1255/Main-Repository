@@ -1,6 +1,6 @@
 package com.company;
 
-public class Omkar_4_Literals {
+public class O4_Literals {
     public static void main(String[] args) {      // main and enter to write this command
         // some primitive datatype
         byte int1 = 34;
